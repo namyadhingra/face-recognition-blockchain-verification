@@ -66,15 +66,6 @@ identities, no open query endpoint, and a scripted removal procedure.
 | Evaluation | scikit-learn + matplotlib | ROC curves |
 | Tests | pytest + `forge test` | |
 
-### On YOLO
-
-If YOLO is a course requirement: YOLO does **detection**, not recognition. It
-gives bounding boxes, not identity embeddings, so it replaces SCRFD in Stage 1
-and you still need ArcFace for matching. Use `YOLOv8n-face` (pose variant, which
-emits 5 facial keypoints) so you keep landmark alignment — unaligned crops
-measurably degrade ArcFace accuracy. If YOLO is not required, skip it:
-InsightFace does detect → align → embed in one call.
-
 ---
 
 ## 3. Deliverables
@@ -128,8 +119,8 @@ find src -type d -exec touch {}/__init__.py \;
 printf "data/\n.venv/\n.env\n*.faiss\n*.pkl\n" > .gitignore
 ```
 
-**Pre-download model weights now** — first InsightFace run pulls ~300 MB and
-will stall your video recording.
+**Pre-download model weights** — first InsightFace run pulls ~300 MB and
+will stall video recording.
 
 ```bash
 python -c "from insightface.app import FaceAnalysis; a=FaceAnalysis(name='buffalo_l'); a.prepare(ctx_id=-1)"
