@@ -1,7 +1,7 @@
-insightface==0.7.3
+insightface==1.0.1
 onnxruntime==1.17.3
 numpy==1.26.4
-opencv-python-headless==4.9.0.80
+opencv-python==4.9.0.80
 requests==2.31.0
 beautifulsoup4==4.12.3
 python-dotenv==1.0.1
