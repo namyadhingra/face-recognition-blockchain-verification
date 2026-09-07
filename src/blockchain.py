@@ -7,11 +7,9 @@ Implements a local blockchain with proper block structure:
 - Chain integrity verification walks the entire chain
 
 This is a simulated chain — it runs locally and demonstrates the
-tamper-evidence concept without requiring a real network. The task
-specification permits this: "any blockchain — public testnet, mainnet,
-or a local/simulated chain."
+tamper-evidence concept without requiring a real network.
 
-The key insight this demonstrates: if you change even one byte of the
+Key insight demonstrated here: if you change even one byte of the
 anchored record, its SHA-256 digest changes, and verify() returns False.
 The chain is immutable *within* this process. A real blockchain extends
 this guarantee across untrusted parties.

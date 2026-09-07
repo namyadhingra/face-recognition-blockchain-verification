@@ -508,12 +508,12 @@ The `is_chain_valid()` method walks the entire chain and verifies:
 
 ### Why a Simulated Blockchain?
 
-The task specification explicitly permits _"any blockchain — public testnet, mainnet, or a local/simulated chain — as long as you can demonstrate re-verifying the data against the on-chain record."_ Our simulated chain:
+We implemented a local simulated blockchain with genuine block hashing and Proof-of-Work to provide a self-contained, zero-dependency environment for tamper-evident provenance verification. Our simulated chain:
 
-- ✅ Demonstrates all core blockchain properties (immutability, chain linkage, PoW)
-- ✅ Allows instant, reproducible demos without network dependencies
-- ✅ Proves tamper-evidence: changing 1 bit → completely different hash → verification fails
-- ✅ Can be extended to a real chain (Ethereum Sepolia, Polygon Amoy) by swapping `blockchain.py`
+- ✅ Demonstrates all core blockchain properties (immutability, chain linkage, PoW consensus)
+- ✅ Enables instant, fully reproducible verification without external testnet rate limits or gas fees
+- ✅ Proves tamper-evidence: changing even 1 bit results in a completely different hash and failed verification
+- ✅ Can be easily extended to a live network (e.g., Ethereum Sepolia, Polygon Amoy) by swapping the backend in `blockchain.py`
 
 ---
 
