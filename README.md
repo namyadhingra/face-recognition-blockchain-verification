@@ -126,7 +126,7 @@ face-recognition-blockchain-verification/
 ### Data Flow Diagram
 
 <p align="center">
-  <img src="assets/data_flow_diagram.png" alt="FaceChain Data Flow Architecture" width="100%" />
+  <img src="assets/data_flow_diagram.jpeg" alt="FaceChain Data Flow Architecture" width="100%" />
 </p>
 
 ---
